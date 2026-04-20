@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,shrink-to-fit=no,maximum-scale=1.0">
+	<title>DataCenter.FM 🤖🔊 The sound of AI</title>
+	<meta name="description" content="Experience the real-world sounds of AI with this interactive audio generator.">
+	<link rel="canonical" href="https://datacenter.fm/">
+	<link rel="license" href="https://choosealicense.com/licenses/gpl-3.0/" title="GNU GPLv3 (code)">
+	<link rel="license" href="https://creativecommons.org/licenses/by-nd/4.0/" title="CC BY-ND (audio/text/images)">
+	<base target="_top">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="DataCenter.FM">
+	<meta property="og:title" content="DataCenter.FM 🤖🔊 The sound of AI">
+	<meta property="og:description" content="Experience the real-world sounds of AI with this interactive audio generator.">
+	<meta property="og:image" content="https://datacenter.fm/_assets/social.jpg">
+	<meta property="og:url" content="https://datacenter.fm/">
+	<meta property="og:locale" content="en_US">
+
+	<meta name="apple-mobile-web-app-title" content="DataCenter.FM">
+	<meta name="theme-color" content="#2C3034">
+	<link rel="icon" href="https://datacenter.fm/_assets/favicon.png">
+	<link rel="apple-touch-icon" href="https://datacenter.fm/_assets/apple-touch-icon.png">
+
+	<link rel="stylesheet" href="_assets/main.css">
+</head>
+<body>
+	
+	<main data-loops="servers1:_assets/audio/servers1.mp3,servers2:_assets/audio/servers2.mp3,cooling1:_assets/audio/cooling1.mp3,cooling2:_assets/audio/cooling2.mp3,generators1:_assets/audio/generators1.mp3,generators2:_assets/audio/generators2.mp3,generators3:_assets/audio/generators3.mp3,expansion:_assets/audio/expansion.mp3" data-other="_assets/audio/other.mp3">
+		<span class="screw"></span><span class="screw"></span><span class="screw"></span><span class="screw"></span>
+		<div id="container">
+			
+			<header>
+				<h1>DataCenter.FM</h1>
+				<p>Experience the real-world sounds of AI<br>with this interactive audio generator</p>
+				<button disabled>Power up!</button>
+			</header>
+			
+			<div id="db" aria-hidden="true">
+				<div><canvas width="224" height="1304"></canvas></div>
+			</div>
+			
+			<section id="servers">
+				<h2>Servers</h2>
+				<input type="range" name="servers" min="10000" max="1000000" step="any" value="40000" aria-label="Servers, 10,000 to 1,000,000" disabled>
+				<p aria-hidden="true"><span>10,000</span> <span>|</span> <span>|</span> <span>|</span> <span>1,000,000</span></p>
+			</section>
+			
+			<div id="gpuDisplay" aria-hidden="true">
+				<div class="digit"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+				<div class="digit"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+			</div>
+			
+			<section id="gpu">
+				<h2>GPU Load</h2>
+				<input type="range" name="gpu" min="0" max="100" value="6" step="any" aria-label="GPU Load, 0% to 100%" disabled>
+				<p aria-hidden="true"><span>0%</span> <span>|</span> <span>|</span> <span>|</span> <span>100%</span></p>
+			</section>
+			
+			<section id="generators">
+				<h2>Gas Turbine<br>Generators</h2>
+				<label><input type="checkbox" name="generators1" value="1" aria-label="Generator 1" disabled> 1</label>
+				<label><input type="checkbox" name="generators2" value="1" aria-label="Generator 2" disabled> 2</label>
+				<label><input type="checkbox" name="generators3" value="1" aria-label="Generator 3" disabled> 3</label>
+			</section>
+			
+			<section id="staffing">
+				<h2>Staffing</h2>
+				<input type="range" name="staffing" min="0" max="100" value="0" step="any" aria-label="Staffing, Low(0) to High(100)" disabled>
+				<p aria-hidden="true"><span>Low</span> <span></span> <span>Medium</span> <span></span> <span>High</span></p>
+			</section>
+			
+			<div id="coolingDisplay" aria-hidden="true">
+				<div class="digit"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+				<div class="digit"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+			</div>
+			
+			<section id="cooling">
+				<h2>Cooling</h2>
+				<input type="range" name="cooling" min="0" max="100" value="9" step="any" aria-label="Cooling, 0% to 100%" disabled>
+				<p aria-hidden="true"><span>0%</span> <span>|</span> <span>|</span> <span>|</span> <span>100%</span></p>
+			</section>
+			
+			<section id="expansion">
+				<h2>Expansion</h2>
+				<label><input type="checkbox" name="expansion" value="1" disabled> Drill, baby, drill</label>
+			</section>
+			
+			<section id="power" aria-hidden="true">
+				<h2>Power Use</h2>
+				<div><span></span><span></span><span></span></div>
+			</section>
+			
+			<section id="temperature" aria-hidden="true">
+				<h2>Temperature</h2>
+				<div><span></span><span></span><span></span></div>
+			</section>
+			
+			<section id="sentience" aria-hidden="true">
+				<h2>Sentience</h2>
+				<div></div>
+			</section>
+			
+			<div id="warnings" aria-hidden="true">
+				<p id="warningsTemperature">Heat Warning</p>
+				<p id="warningsCooling">Local Water Drained</p>
+				<p id="warningsSentience">Containment Breach</p>
+			</div>
+		
+		</div>
+		<div id="dimmed"></div>
+		<div id="breach"></div>
+	</main>
+	
+	<footer>
+		<h2 aria-hidden="true"><a href="https://vole.wtf">VOLE.wtf</a> <a href="https://directing.attention.to/">Attention</a></h2>
+		<p>
+			<span>Built by Matt Round of <a href="https://vole.wtf">VOLE.wtf</a></span>
+			<span>Sounds by <a href="https://www.instagram.com/denz_thehuman/">Dean Salant</a></span>
+			<span>Published by <a href="https://directing.attention.to/">Attention</a></span>
+		</p>
+		<p><span>Code is licensed as <a href="https://choosealicense.com/licenses/gpl-3.0/" rel="license">GNU GPLv3</a>,</span> <span>audio/text/images as <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="license">CC BY-ND</a></span></p>
+	</footer>
+
+	<script src="_assets/howler.js"></script>
+	<script src="_assets/main.js"></script>
+</body>
+</html>
